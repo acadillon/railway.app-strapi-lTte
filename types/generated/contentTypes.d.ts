@@ -514,6 +514,8 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       true
     >;
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
+    Color: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

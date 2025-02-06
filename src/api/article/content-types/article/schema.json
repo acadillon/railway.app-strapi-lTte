@@ -19,20 +19,26 @@
       "type": "string"
     },
     "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::author.author",
       "inversedBy": "articles"
+    },
+    "Color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
     }
   }
 }
